@@ -9,4 +9,4 @@ app.use(express.json());
 app.use(cors());
 app.use(crowdRoute);
 
-app.listen(3000, () => console.log('Running...'));
+app.listen(process.env.PORT, () => console.log('Running...'));
