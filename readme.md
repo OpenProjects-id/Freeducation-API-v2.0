@@ -1,5 +1,8 @@
 # === FREEDUCATION API BY YUDA ===<a name="TOP"></a>
 
+Request API ke link ini :
+https://api-freeducation.herokuapp.com
+
 ## THE APIs
 
 | KET                  | METHOD | URL            | KEY (required)                                           | Optional                 |
