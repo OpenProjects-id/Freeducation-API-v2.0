@@ -18,4 +18,6 @@ module.exports = {
       res.send(error);
     }
   },
+  // crowdfundingsDelete: async (req, res) => {
+  // },
 };
