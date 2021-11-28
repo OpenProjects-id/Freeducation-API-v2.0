@@ -1,8 +1,19 @@
-const { loadData } = require('../utils/getData');
+// const { loadData } = require('../utils/getData');
+const Crowd = require('../models/crowdfundings');
 module.exports = {
-  crowdfundings: (req, res) => {
+  crowdfundings: async (req, res) => {
     try {
-      res.send(loadData());
+      const data = await Crowd.find();
+      res.send(data);
+    } catch (error) {
+      res.send(error);
+    }
+  },
+  crowdfundingsPost: async (req, res) => {
+    try {
+      const crowd = new Crowd(req.body);
+      await crowd.save();
+      res.send({ crowd, msg: 'Berhasil ditambahkan!' });
     } catch (error) {
       res.send(error);
     }
