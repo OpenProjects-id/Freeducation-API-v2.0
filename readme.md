@@ -12,6 +12,8 @@
 
 - Register User
 - Login User
+- Logout User
+- Get Profile
 
 ## THE APIs
 
@@ -19,5 +21,8 @@
 | -------------------- | ------ | -------------- | -------------------------------------------------------- | ------------------------ |
 | Register User        | POST   | /register      | nama, email, password                                    |                          |
 | Login User           | POST   | /login         | email, password                                          |                          |
+| Logout User          | POST   | /logout        |
+|                      |
+| Profile User         | GET    | /profile       |                                                          |                          |
 | List Crowdfundings   | GET    | /crowdfundings |                                                          |                          |
 | Tambah Crowdfundings | POST   | /crowdfundings | title, category, pledged, target, date_end, profile_name | thumbnail, profile_photo |
