@@ -13,30 +13,31 @@ const crowdfundingsSchema = new mongoose.Schema({
   },
   thumbnail: {
     type: String,
-    trim: true,
   },
-  pledged: {
-    type: Number,
-    required: true,
-    trim: true,
+  data: {
+    type: String,
   },
-  target: {
-    type: Number,
-    required: true,
-    trim: true,
-  },
-  date_end: {
-    type: Number,
-    required: true,
-    trim: true,
-  },
+  // pledged: {
+  //   type: Number,
+  //   required: true,
+  //   trim: true,
+  // },
+  // target: {
+  //   type: Number,
+  //   required: true,
+  //   trim: true,
+  // },
+  // date_end: {
+  //   type: Number,
+  //   required: true,
+  //   trim: true,
+  // },
   profile_photo: {
     type: String,
     trim: true,
   },
   profile_name: {
     type: String,
-    required: true,
     trim: true,
   },
 });

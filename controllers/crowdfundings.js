@@ -1,5 +1,5 @@
-// const { loadData } = require('../utils/getData');
 const Crowd = require('../models/crowdfundings');
+
 module.exports = {
   crowdfundings: async (req, res) => {
     try {
@@ -12,12 +12,19 @@ module.exports = {
   crowdfundingsPost: async (req, res) => {
     try {
       const crowd = new Crowd(req.body);
+
       await crowd.save();
-      res.send({ crowd, msg: 'Berhasil ditambahkan!' });
+      res.status(201).send({ crowd, msg: 'Berhasil ditambahkan!' });
     } catch (error) {
       res.send(error);
     }
   },
-  // crowdfundingsDelete: async (req, res) => {
-  // },
+  crowdfundingsEdit: async (req, res) => {
+    try {
+      const crowd = await Crowd.findOneAndUpdate({ _id: req.params.id }, req.body);
+      res.send({ crowd, msg: 'Berhasil diubah!' });
+    } catch (error) {
+      res.send(error);
+    }
+  },
 };
