@@ -24,4 +24,19 @@ module.exports = {
       res.status(400).send(error);
     }
   },
+
+  logout: async (req, res) => {
+    try {
+      req.user.tokens = req.user.tokens.filter((x) => x.token !== req.token);
+
+      await req.user.save();
+      res.send({ message: 'Logout berhasil!' });
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  },
+
+  profile: async (req, res) => {
+    res.send(req.user);
+  },
 };
