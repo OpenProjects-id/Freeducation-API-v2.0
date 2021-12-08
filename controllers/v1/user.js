@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require("../../models/user");
 
 module.exports = {
   register: async (req, res) => {
@@ -30,7 +30,7 @@ module.exports = {
       req.user.tokens = req.user.tokens.filter((x) => x.token !== req.token);
 
       await req.user.save();
-      res.send({ message: 'Logout berhasil!' });
+      res.send({ message: "Logout berhasil!" });
     } catch (error) {
       res.status(500).send(error);
     }
