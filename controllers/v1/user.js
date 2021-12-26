@@ -16,6 +16,8 @@ module.exports = {
 
   login: async (req, res) => {
     try {
+      if (!req.body.email || !req.body.password)
+        res.status(400).json({ message: "Please Input Email/Password" });
       const user = await User.cekUser(req.body.email, req.body.password);
       const token = await user.generateAuthToken();
 
