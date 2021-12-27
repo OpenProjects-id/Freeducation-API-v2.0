@@ -21,13 +21,19 @@ module.exports = {
   },
   crowdfundingsEdit: async (req, res) => {
     try {
+      if (!req.params.id) res.status(400).json({ message: "Id Required" });
+
+      if (!req.body) res.status(400).json({ message: "body Required" });
+
       const crowd = await Crowd.findOneAndUpdate(
         { _id: req.params.id },
-        req.body
+        req.body,
+        { new: true }
       );
+
       res.send({ crowd, msg: "Berhasil diubah!" });
     } catch (error) {
-      res.send(error);
+      res.status(400).json({ message: error });
     }
   },
 };

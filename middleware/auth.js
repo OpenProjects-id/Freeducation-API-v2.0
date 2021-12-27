@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const { HttpStatusCode } = require("../constant/httpStatusCodes");
 const User = require("../models/user");
 
 const auth = async (req, res, next) => {
@@ -20,8 +21,9 @@ const auth = async (req, res, next) => {
     req.user = user;
 
     next();
-  } catch (error) {
-    res.status(401).send({ message: "Anda Belum Login" });
+  } catch (err) {
+    // res.status(401).send({ message: "Anda Belum Login" });
+    next({ status: HttpStatusCode.FORBIDDEN });
   }
 };
 
