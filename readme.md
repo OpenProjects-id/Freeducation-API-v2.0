@@ -4,7 +4,7 @@
 
 Jika kamu ingin berkontribusi dalam proyek ini, silahkan baca dan ikuti dokumentasi yang sudah kami buat di [File CONTRIBUTING.MD](https://github.com/OpenProjects-id/Freeducation-API-v2.0/blob/main/CONTRIBUTING.md)
 
-Jika ada pertanyaan atau saran, bukalah issue baru atau tanyakan ke [Discord OpenProjects.id](https://discord.gg/jXzjHu9fJ7) di channel `#freeducation`.
+Jika ada pertanyaan atau saran, bukalah issue baru atau tanyakan ke [Discord OpenProjects.id](https://discord.gg/jXzjHu9fJ7) di channel `#freeducation`
 
 Terima Kasih.
 
