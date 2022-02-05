@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const crowdfundingsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: [true, "Must Have Title"],
     trim: true,
   },
   category: {
     type: String,
-    required: true,
+    required: [true, "Must Have Category"],
     trim: true,
   },
   thumbnail: {
@@ -42,6 +42,6 @@ const crowdfundingsSchema = new mongoose.Schema({
   },
 });
 
-const Crowdfundings = mongoose.model('crowdfundings', crowdfundingsSchema);
+const Crowdfundings = mongoose.model("crowdfundings", crowdfundingsSchema);
 
 module.exports = Crowdfundings;
